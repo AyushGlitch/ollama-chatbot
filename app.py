@@ -2,7 +2,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama import ChatOllama
 import re
 import pandas as pd
-import numpy as np
+
 
 def findAndFromContext(context, entityName):
     template = """
@@ -19,7 +19,7 @@ def findAndFromContext(context, entityName):
     model = ChatOllama(model="gemma2:2b", temperature=0.5)
     # model = ChatOllama(model="qwen2:1.5b", temperature=0.5)
     # model = ChatOllama(model="qwen2:0.5b", temperature=0.5)
-    # model= ChatGroq(model_name="llama3-8b-8192")
+
     chain = prompt | model
 
     question = f"Numerical value as floating integer of {entityName}."
